@@ -28,7 +28,7 @@ module.exports = {
           model: 'Agences',
           key: 'id'
         }
-      }
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

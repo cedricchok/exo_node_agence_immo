@@ -6,13 +6,7 @@ const Agence = require('../models').Agence;
  * List all agences
  */
 exports.agence_list = (req, res, next) => {
-	Agence.findAll({
-		attributes: ['id', 'name'],
-		include: [{
-			model: Agent_immo,
-			attributes: ['id', 'name', 'tel', 'email', 'pwd']
-		}]
-	})
+	Agence.findAll({})
 		.then((agences) => res.status(200).json(agences))
 		.catch((err) => console.log(err));
 };
@@ -31,18 +25,10 @@ exports.detail_agence = (req, res, next) => {
  * Add a agence
  */
 exports.add_agence = (req, res, next) => {
-	const agence = req.body;
-	Agence.create(agence)
-	.then( (agenceCreated) => {
-		if (agence.name != undefined && agence.name.length > 0) {
-		agenceCreated.setStyles(agence.Styles)
-		.then(() => res.status(201).json(agenceCreated))
-		.catch((err) => console.log(err));
-		} else {
-			res.status(201).json(agenceCreated);
-		}
-	})
-	.catch(err => console.log(err));
+	const agenceCreated = req.body;
+	Agence.create(agenceCreated)
+	.then(() => res.status(201).json(agenceCreated))
+	.catch((err) => console.log(err));
 }
 
 /**

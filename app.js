@@ -13,11 +13,11 @@ app.get('/', (req, res) => {
 });
 
 // With Router and Controller
-const agenceRouter = require('./routes/agence');
-const agentImmoRouter = require('./routes/agent_immo');
-const acheteurRouter = require('./routes/acheteur');
-const bienRouter = require('./routes/bien');
-const annonceRouter = require('./routes/annonce');
+const agenceRouter = require('./routes/agence.router');
+const agentImmoRouter = require('./routes/agent_immo.router');
+const acheteurRouter = require('./routes/acheteur.router');
+const bienRouter = require('./routes/bien.router');
+const annonceRouter = require('./routes/annonce.router');
 
 app.use('/agences', agenceRouter);
 app.use('/agents', agentImmoRouter);

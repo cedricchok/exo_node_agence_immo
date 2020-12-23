@@ -17,6 +17,24 @@ module.exports = {
       status: {
         type: Sequelize.STRING
       },
+      AcheteurId:{
+        type:Sequelize.INTEGER,
+        onDelete: "CASCADE",
+        allowNull: false,
+        references: {
+          model: 'Acheteurs',
+          key: 'id'
+        }
+      },
+      BienId:{
+        type:Sequelize.INTEGER,
+        onDelete: "CASCADE",
+        allowNull: false,
+        references: {
+          model: 'Biens',
+          key: 'id'
+        }
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

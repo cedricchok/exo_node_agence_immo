@@ -20,6 +20,15 @@ module.exports = {
       pwd: {
         type: Sequelize.STRING
       },
+      AgenceId: {
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        allowNull: false,
+        reference: {
+          model: 'Agences',
+          key: 'id'
+        }
+      }
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

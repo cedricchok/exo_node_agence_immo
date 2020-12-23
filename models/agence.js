@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Agence.hasMany(models.Agent_immo)
     }
   };
   Agence.init({

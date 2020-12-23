@@ -14,13 +14,13 @@ app.get('/', (req, res) => {
 
 // With Router and Controller
 const agenceRouter = require('./routes/agence');
-const agentRouter = require('./routes/agent');
+const agentImmoRouter = require('./routes/agent_immo');
 const acheteurRouter = require('./routes/acheteur');
 const bienRouter = require('./routes/bien');
 const annonceRouter = require('./routes/annonce');
 
 app.use('/agences', agenceRouter);
-app.use('/agents', agentRouter);
+app.use('/agents', agentImmoRouter);
 app.use('/acheteurs', acheteurRouter);
 app.use('/biens', bienRouter);
 app.use('/annonces', annonceRouter);
